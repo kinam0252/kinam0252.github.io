@@ -87,27 +87,40 @@ education:
 work:
   - position: AI Research Intern
     company_name: DAVIAN
-    company_url: ''
+    company_url: 'https://davian.kaist.ac.kr/'
     company_logo: ''
     date_start: 2024-01-01
     date_end: 2025-02-01
     summary: |2-
       Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      - Stable Video Diffusion (SVD) Motion control
+      - Image-to-3D using SVD
+      - Applying PAG on SVD
+        
   - position: AI Developer
-    company_name: 
-    company_url: ''
+    company_name: ThetaOne
+    company_url: 'https://thetaone.co/'
     company_logo: ''
     date_start: 2023-07-11
     date_end: 2023-08-25
     summary: |
       Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-
+      - Developed AI code for the Metabuddy App
+      - Fine-tuned T5 model to create a Chat Summarizer
+      - Built code to extract memory from chats using GPT
+      - Developed a codebase to construct graphs from memory, enabling efficient retrieval
+        
+  - position: AI Research Intern
+    company_name: SIIT Lab
+    company_url: 'http://siit.kaist.ac.kr/'
+    company_logo: ''
+    date_start: 2021-07-01
+    date_end: 2023-12-27
+    summary: |
+      Responsibilities include:
+      - Conducted various experiments by altering the number of ViT layers
+      - Combined CNN with ViT to optimize and lightweight the model
+    
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
@@ -115,15 +128,15 @@ skills:
     items:
       - name: Python
         description: ''
-        percent: 80
+        percent: 100
         icon: code-bracket
-      - name: Data Science
+      - name: C++
         description: ''
         percent: 100
         icon: chart-bar
-      - name: SQL
+      - name: C
         description: ''
-        percent: 40
+        percent: 100
         icon: circle-stack
   - name: Hobbies
     color: '#eeac02'
