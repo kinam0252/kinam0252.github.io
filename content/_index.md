@@ -35,22 +35,12 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        I'm an MS student in the DAVIAN Lab at KAIST AI, advised by Professor Jaegul Choo.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        My current research focuses on methods to enhance the performance of video diffusion models without requiring additional training.
         
         Please reach out to collaborate 😃
     design:
       columns: '1'
-  - block: collection
-    content:
-      title: Recent Publications
-      text: ""
-      filters:
-        folders:
-          - publication
-        exclude_featured: false
-    design:
-      view: citation
 
 ---
