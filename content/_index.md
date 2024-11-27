@@ -35,7 +35,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |
-        I'm a MS student in the DAVIAN Lab at KAIST AI, advised by Professor Jaegul Choo.  
+        I'm a MS student at DAVIAN Lab in KAIST AI, advised by Professor Jaegul Choo.  
 
         My current research focuses on methods to enhance the performance of video diffusion models without requiring additional training.  
 
