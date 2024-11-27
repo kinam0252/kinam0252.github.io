@@ -20,12 +20,12 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: M.S. Student at DAVIAN Lab
+role: M.S. Student at [DAVIAN Lab](https://davian.kaist.ac.kr/)
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: DAVIAN
-    url: https://davian.kaist.ac.kr/
+  - name: KAIST AI
+    url: https://gsai.kaist.ac.kr/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
