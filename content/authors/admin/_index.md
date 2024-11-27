@@ -58,7 +58,6 @@ education:
     date_end: ""
     summary: |
 
-
   - area: BS Student at School of Computing
     institution: KAIST
     date_start: 2019-02-01
@@ -185,4 +184,4 @@ skills:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Kinam Kim is an MS student of Artificial Intelligence at the KAIST AI DAVIAN Lab. His research interests include video diffusion models, computer vision, and machine learning.
