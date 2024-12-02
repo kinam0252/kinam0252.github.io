@@ -33,8 +33,8 @@ profiles:
   - icon: at-symbol
     url: 'mailto:kimkinam1118@kaist.ac.kr'
     label: E-mail Me
-  # - icon: brands/x
-  #   url: https://twitter.com/GetResearchDev
+  - icon: brands/x
+    url: https://x.com/kinam_0252
   - icon: brands/instagram
     url: https://www.instagram.com/_7lnam_b/
   - icon: brands/github
