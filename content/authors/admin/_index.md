@@ -40,7 +40,7 @@ profiles:
   - icon: brands/github
     url: https://github.com/kinam0252
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/kinamkim0252
+    url: https://www.linkedin.com/in/kinam-kim
   # - icon: academicons/google-scholar
   #   url: https://scholar.google.com/
   # - icon: academicons/orcid
