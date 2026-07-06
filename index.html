@@ -22,6 +22,86 @@
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   <link rel="stylesheet" href="/css/academic.css">
+  <style>
+  /* ---- custom readability / design tweaks (kinam) ---- */
+  #about p { line-height: 1.72; }
+  #about p + p { margin-top: .6rem; }
+  /* Avoid orphan/widow words when text wraps (graceful no-op on old browsers) */
+  #about p,
+  .news-list li > span,
+  ul.ul-papers li .description p.authors,
+  ul.ul-papers li .description p.venue,
+  #about .ul-edu .description p { text-wrap: pretty; }
+  ul.ul-papers li .description p.title { text-wrap: balance; }
+  .home-section > .container > .row > [class*="col"] > h1,
+  .home-section h1 {
+    font-weight: 700;
+    display: inline-block;
+    padding-bottom: 6px;
+    margin-bottom: 1.1rem;
+    border-bottom: 3px solid #2962ff;
+    letter-spacing: -.01em;
+  }
+  #about h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .6rem; }
+  /* News */
+  .news-list { list-style: none; padding-left: 0; margin: 0; }
+  .news-list li {
+    display: flex; align-items: baseline; gap: .7rem;
+    padding: .6rem .85rem; margin-bottom: .55rem;
+    background: #f6f8fc; border-left: 3px solid #2962ff;
+    border-radius: 8px; line-height: 1.55;
+  }
+  .news-date {
+    flex-shrink: 0; font-size: .78rem; font-weight: 600; color: #4b5c7a;
+    background: #e6ecf7; border-radius: 999px; padding: .12rem .65rem;
+    white-space: nowrap; letter-spacing: .01em;
+  }
+  .news-ico { flex-shrink: 0; }
+  .venue-badge { font-weight: 700; color: #2962ff; }
+  /* Navbar — larger, more legible */
+  #navbar-main .navbar-brand { font-size: 1.4rem; font-weight: 700; }
+  #navbar-main .main-menu-item .nav-item .nav-link { font-size: 1.05rem; font-weight: 500; }
+  /* Work Experience — org prominent next to briefcase icon */
+  #work-experience .course { font-size: 1rem; font-weight: 700; color: #111; }
+  #work-experience .course .role { font-weight: 400; font-size: .9rem; color: rgba(0,0,0,.55); }
+  #work-experience .institution { font-size: .8rem; }
+  /* Education — make the institution (KAIST) stand out */
+  #about .ul-edu .institution.school { font-size: .88rem; color: rgba(0,0,0,.82); margin-top: .05rem; }
+  #about .ul-edu .institution.school b { color: #0b0b0b; }
+  #work-experience .time { font-size: .8rem; color: rgba(0,0,0,.55); }
+  /* Publications — consistent flex layout (image column + description) */
+  ul.ul-papers li {
+    display: flex; gap: 1.1rem; align-items: flex-start;
+    padding: 1.4rem .6rem 0; border-radius: 10px; transition: background .15s ease;
+  }
+  ul.ul-papers li:hover { background: #f6f8fc; }
+  ul.ul-papers li + li { border-top: 1px solid #eceef2; }
+  ul.ul-papers li .img { flex: 0 0 210px; width: 210px; max-width: 210px; padding: 0; }
+  ul.ul-papers li .img img, ul.ul-papers li .img video {
+    width: 100%; height: auto; display: block; border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.12);
+  }
+  ul.ul-papers li .description { flex: 1 1 auto; min-width: 0; display: block; }
+  ul.ul-papers li .description p { padding-left: 0; }
+  ul.ul-papers li .description p.title { font-weight: 700; font-size: 1.05rem; line-height: 1.35; margin-bottom: .18rem; }
+  ul.ul-papers li .description p.authors { font-size: .92rem; color: #333; margin-bottom: .25rem; }
+  ul.ul-papers li .description p.venue { margin-bottom: .3rem; }
+  ul.ul-papers li .description p.resources { font-size: .92rem; }
+  /* Venue tags — restrained, professional (neutral GitHub-style chip) */
+  .venue-tag {
+    display: inline-block; font-weight: 600; font-size: .8rem;
+    padding: .08rem .5rem; border-radius: 6px;
+    color: #1f2328; background: #f6f8fa; border: 1px solid #d0d7de;
+    letter-spacing: .01em; line-height: 1.5; vertical-align: middle;
+  }
+  .venue-tag .yr { color: #57606a; font-weight: 600; }
+  /* Mobile: stack publication image above text */
+  @media (max-width: 600px) {
+    ul.ul-papers li { flex-direction: column; }
+    ul.ul-papers li .img { flex-basis: auto; width: 62%; max-width: 240px; }
+    #navbar-main .main-menu-item .nav-item .nav-link { font-size: 1rem; }
+  }
+  </style>
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Kinam Kim">
   <link rel="manifest" href="/index.webmanifest">
   <!-- <link rel="icon" type="image/png" href="/images/icon_hu2065e2b3e3f9ec61858579cdb7515c4d_74858_32x32_fill_lanczos_center_2.png">
@@ -157,7 +237,7 @@
       
       <a href="https://scholar.google.com/citations?hl=ko&user=Y3VjmlkAAAAJ&view_op=list_works&gmla=AH8HC4xRS9ffxSdmE_uJ05eUIjd3hxFkDaoTzdZWPSa9AvV4z4XvgXAJxrcpUbNNaGlqpBMvgX4jLQMvN5dH-LOZreMaNtnC3X9Y2KsAc1DHg1UCwDE18JzqXw"><b>Google Scholar</b></a>
         | <a href="https://github.com/kinam0252"><b>Github</b></a>
-        | <a href="https://drive.google.com/file/d/1GWYwwjDaNrppRWoXnZKB4zN37eL_mm0e/view?usp=drive_link"><b>CV</b></a>
+        | <a href="/cv/kinam_kim_cv.pdf"><b>CV</b></a>
       <br>
       <br>
       </td>
@@ -184,7 +264,7 @@
 <p>I'm a M.S./PH.D Integrated student at <a href="https://gsai.kaist.ac.kr/" target="_blank" rel="noopener">Kim Jaechul Graduate School of AI, KAIST</a>, advised by professor <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>.</p>
 
 
-<p>I am deeply interested in AI research, particularly in <b>Video Diffusion Models</b> and <b>Vision-Language-Action (VLA) models</b>. With experience in Generative Video Models and Robotics, I aim to contribute to the advancement of real-world applicability through innovative AI technologies.</p>
+<p>I am deeply interested in AI research, particularly in <b>Vision-Language-Action (VLA) models</b> and <b>Video Diffusion Models</b>. With experience in Robotics and Generative Video Models, I aim to contribute to the advancement of real-world applicability through innovative AI technologies.</p>
 
     <div class="row">
 
@@ -197,13 +277,34 @@
               <p class="course">kinamplify [at] kaist.ac.kr</p>
             </div>
           </li>
-          <!-- <li>  
+          <!-- <li>
             <i class="fa-li fas fa-phone-alt"></i>
             <div class="description">
               <p class="course">(&#43;82)-42-350-3579</p>
-            </div> 
-          </li>  -->         
-        </ul>        
+            </div>
+          </li>  -->
+        </ul>
+
+        <div id="work-experience">
+        <h3 style="margin-top: 1.2rem;">Work Experience</h3>
+        <ul class="ul-edu fa-ul">
+          <li>
+            <i class="fa-li fas fa-briefcase"></i>
+            <div class="description">
+              <p class="course">NVIDIA <span class="role">(Research&nbsp;Intern)</span></p>
+              <p class="time">Starting Jul. 2026</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-li fas fa-briefcase"></i>
+            <div class="description">
+              <p class="course">Microsoft&nbsp;Research&nbsp;Asia <span class="role">(Research&nbsp;Intern)</span></p>
+              <p class="institution">Tokyo, Japan</p>
+              <p class="time">Feb. 2026 - Jul. 2026</p>
+            </div>
+          </li>
+        </ul>
+        </div>
       </div>
 
       <div class="col-md-6">
@@ -214,7 +315,7 @@
             <div class="description">
               <p class="course">M.S. Student/PH.D Integrated in Artificial Intelligence</p>
               <p class="time">Mar. 2025 - Present</p>
-              <p class="institution">Korea Advanced Institute of Science and Technology (KAIST)</p>
+              <p class="institution school">Korea Advanced Institute of Science and Technology (KAIST)</p>
               <p class="institution">Advisor: Prof. Jaegul Choo</p>
             </div>
           </li>
@@ -224,7 +325,7 @@
             <div class="description">
               <p class="course">B.S. in School of Computing</p>
               <p class="time">Mar. 2019 - 2024</p>
-              <p class="institution">Korea Advanced Institute of Science and Technology (KAIST)</p>
+              <p class="institution school">Korea Advanced Institute of Science and Technology (KAIST)</p>
             </div>
           </li>
 
@@ -243,9 +344,15 @@
       <div class="row">
         <div class="col-lg-12">
           <h1>News</h1>
-          <ul>
-            <li>[Sep. 2025] TIC-FT paper accepted to <span Style="font-weight: bold; color: #007bff;">NeurIPS 2025</span>.</li>
-            <li>[Mar. 2025] STG paper accepted to <span Style="font-weight: bold; color: #007bff;">CVPR 2025</span>.</li>
+          <ul class="news-list">
+            <li>
+              <span class="news-date">Feb 2026</span>
+              <span><span class="news-ico">🎉</span> <b>EgoX</b> accepted to <span class="venue-badge">CVPR 2026</span>.</span>
+            </li>
+            <li>
+              <span class="news-date">Jan 2026</span>
+              <span><span class="news-ico">🎉</span> <b>ACG</b> accepted to <span class="venue-badge">ICRA 2026</span>.</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -267,12 +374,32 @@
 
         <li>
             <div class="img">
+              <img src="/papers/images/object_centric_residual_rl_teaser.png" class="img-responsive" alt="">
+            </div>
+          <div class="description">
+            <p class="title">Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement</p>
+            <p class="authors"><u>Kinam Kim</u>, Namiko Saito, Heecheol Kim, Katsushi Ikeuchi, Jaegul Choo, Yasuyuki Matsushita</p>
+            <p class="venue"><span class="venue-tag arxiv">arXiv <span class="yr">2026</span></span></p>
+
+            <p class="resources">
+              [
+                <a href="https://arxiv.org/abs/2606.18953">paper</a>
+              ]
+              [
+                <a href="">project page</a>
+              ]
+            </p>
+          </div>
+        </li>
+
+        <li>
+            <div class="img">
               <img src="/papers/images/EgoX_teaser.png" class="img-responsive" alt="">
             </div>
           <div class="description">
             <p class="title">EgoX: Egocentric Video Generation from a Single Exocentric Video</p>
             <p class="authors">Taewoong Kang*, <u>Kinam Kim</u>*, Dohyeon Kim*, Jaegul Choo (* equal contribution)</p>
-            <p class="venue" style="font-style: italic;">The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026<span style="font-weight:normal"></span></p>
+            <p class="venue"><span class="venue-tag cvpr">CVPR <span class="yr">2026</span></span></p>
 
             <p class="resources">
               [
@@ -292,7 +419,7 @@
           <div class="description">
             <p class="title">ACG: Action Coherence Guidance for Flow-based VLA models</p>
             <p class="authors">Minho Park*, <u>Kinam Kim</u>*, Junha Hyung, Hyojin Jang, Hoiyeong Jin, Jooyeol Yun, Hojoon Lee, Jaegul Choo (* equal contribution)</p>
-            <p class="venue" style="font-style: italic;">The Forty-Third IEEE International Conference on Robotics and Automation (ICRA), 2026<span style="font-weight:normal"></span></p>
+            <p class="venue"><span class="venue-tag icra">ICRA <span class="yr">2026</span></span></p>
 
             <p class="resources">
               [
@@ -315,7 +442,7 @@
           <div class="description">
             <p class="title">Temporal In-Context Fine-Tuning for Versatile Control of Video Diffusion Models</p>
             <p class="authors"><u>Kinam Kim</u>*, Junha Hyung*, Jaegul Choo (* equal contribution)</p>
-            <p class="venue" style="font-style: italic;">The Thirty-Eighth Annual Conference on Neural Information Processing Systems (NeurIPS), 2025<span style="font-weight:normal"></span></p>
+            <p class="venue"><span class="venue-tag neurips">NeurIPS <span class="yr">2025</span></span></p>
 
             <p class="resources">
               [
@@ -338,7 +465,7 @@
           <div class="description">
             <p class="title">Spatiotemporal Skip Guidance for Enhanced Video Diffusion Sampling</p>
             <p class="authors"> Junha Hyung*, <u>Kinam Kim</u>*, Susung Hong, Min-Jung Kim, Jaegul Choo (* equal contribution)</p>
-            <p class="venue" style="font-style: italic;">The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025<span style="font-weight:normal"></span></p>
+            <p class="venue"><span class="venue-tag cvpr">CVPR <span class="yr">2025</span></span></p>
 
             <p class="resources">
               [
@@ -358,7 +485,7 @@
           <div class="description">
             <p class="title">Cross-Frame Representation Alignment for Fine-Tuning Video Diffusion Models</p>
             <p class="authors">Sungwon Hwang*, Hyojin Jang*, <u>Kinam Kim</u>, Minho Park, Jaegul Choo (* equal contribution)</p>
-            <p class="venue" style="font-style: italic;">arXiv preprint, 2025<span style="font-weight:normal"></span></p>
+            <p class="venue"><span class="venue-tag arxiv">arXiv <span class="yr">2025</span></span></p>
 
             <p class="resources">
               [
@@ -378,7 +505,7 @@
           <div class="description">
             <p class="title">Overcoming Camera-Facing Gaze Bias in EG3D Scene Generation</p>
             <p class="authors"><u>Kinam Kim</u>, Juhyun Lee, Youngdo Lee</p>
-            <p class="venue" style="font-style: italic;">arXiv preprint, 2023<span style="font-weight:normal"></span></p>
+            <p class="venue"><span class="venue-tag arxiv">arXiv <span class="yr">2023</span></span></p>
 
             <p class="resources">
               [
@@ -537,26 +664,6 @@
   </div>
 </div>
 
-
-<section id="work-experience" class="home-section wg-blank   " style="padding: 20px 0 20px 0;" >
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>Work Experience</h1>
-          <ul>
-            <li><strong>KAIST DAVIAN Lab</strong>, Daejeon, South Korea<br>
-            Undergraduate Research Intern (Aug. 2023 - Mar. 2025)</li>
-            
-            <li><strong>ThetaOne Korea</strong>, Seoul, South Korea<br>
-            Natural Language Processing AI Developer (Jun. 2023 - Dec. 2023)</li>
-            
-            <li><strong>KAIST SiiT Lab</strong>, Daejeon, South Korea<br>
-            Undergraduate Research Intern (Jun. 2020 - Dec. 2020)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </body>
 </html>
