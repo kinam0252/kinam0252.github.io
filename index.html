@@ -1,669 +1,585 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.7.0">
-
-  <meta name="author" content="Kinam Kim">
-  <meta name="description" content="M.S./PH.D Integrated">
-  <link rel="alternate" hreflang="en-us" href="/">
-  <meta name="theme-color" content="#2962ff">
-   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
-  
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
-  <link rel="stylesheet" href="/css/academic.css">
-  <style>
-  /* ---- custom readability / design tweaks (kinam) ---- */
-  #about p { line-height: 1.72; }
-  #about p + p { margin-top: .6rem; }
-  /* Avoid orphan/widow words when text wraps (graceful no-op on old browsers) */
-  #about p,
-  .news-list li > span,
-  ul.ul-papers li .description p.authors,
-  ul.ul-papers li .description p.venue,
-  #about .ul-edu .description p { text-wrap: pretty; }
-  ul.ul-papers li .description p.title { text-wrap: balance; }
-  .home-section > .container > .row > [class*="col"] > h1,
-  .home-section h1 {
-    font-weight: 700;
-    display: inline-block;
-    padding-bottom: 6px;
-    margin-bottom: 1.1rem;
-    border-bottom: 3px solid #2962ff;
-    letter-spacing: -.01em;
-  }
-  #about h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .6rem; }
-  /* News */
-  .news-list { list-style: none; padding-left: 0; margin: 0; }
-  .news-list li {
-    display: flex; align-items: baseline; gap: .7rem;
-    padding: .6rem .85rem; margin-bottom: .55rem;
-    background: #f6f8fc; border-left: 3px solid #2962ff;
-    border-radius: 8px; line-height: 1.55;
-  }
-  .news-date {
-    flex-shrink: 0; font-size: .78rem; font-weight: 600; color: #4b5c7a;
-    background: #e6ecf7; border-radius: 999px; padding: .12rem .65rem;
-    white-space: nowrap; letter-spacing: .01em;
-  }
-  .news-ico { flex-shrink: 0; }
-  .venue-badge { font-weight: 700; color: #2962ff; }
-  /* Navbar — larger, more legible */
-  #navbar-main .navbar-brand { font-size: 1.4rem; font-weight: 700; }
-  #navbar-main .main-menu-item .nav-item .nav-link { font-size: 1.05rem; font-weight: 500; }
-  /* Work Experience — org prominent next to briefcase icon */
-  #work-experience .course { font-size: 1rem; font-weight: 700; color: #111; }
-  #work-experience .course .role { font-weight: 400; font-size: .9rem; color: rgba(0,0,0,.55); }
-  #work-experience .institution { font-size: .8rem; }
-  /* Education — make the institution (KAIST) stand out */
-  #about .ul-edu .institution.school { font-size: .88rem; color: rgba(0,0,0,.82); margin-top: .05rem; }
-  #about .ul-edu .institution.school b { color: #0b0b0b; }
-  #work-experience .time { font-size: .8rem; color: rgba(0,0,0,.55); }
-  /* Publications — consistent flex layout (image column + description) */
-  ul.ul-papers li {
-    display: flex; gap: 1.1rem; align-items: flex-start;
-    padding: 1.4rem .6rem 0; border-radius: 10px; transition: background .15s ease;
-  }
-  ul.ul-papers li:hover { background: #f6f8fc; }
-  ul.ul-papers li + li { border-top: 1px solid #eceef2; }
-  ul.ul-papers li .img { flex: 0 0 210px; width: 210px; max-width: 210px; padding: 0; }
-  ul.ul-papers li .img img, ul.ul-papers li .img video {
-    width: 100%; height: auto; display: block; border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,.12);
-  }
-  ul.ul-papers li .description { flex: 1 1 auto; min-width: 0; display: block; }
-  ul.ul-papers li .description p { padding-left: 0; }
-  ul.ul-papers li .description p.title { font-weight: 700; font-size: 1.05rem; line-height: 1.35; margin-bottom: .18rem; }
-  ul.ul-papers li .description p.authors { font-size: .92rem; color: #333; margin-bottom: .25rem; }
-  ul.ul-papers li .description p.venue { margin-bottom: .3rem; }
-  ul.ul-papers li .description p.resources { font-size: .92rem; }
-  /* Venue tags — restrained, professional (neutral GitHub-style chip) */
-  .venue-tag {
-    display: inline-block; font-weight: 600; font-size: .8rem;
-    padding: .08rem .5rem; border-radius: 6px;
-    color: #1f2328; background: #f6f8fa; border: 1px solid #d0d7de;
-    letter-spacing: .01em; line-height: 1.5; vertical-align: middle;
-  }
-  .venue-tag .yr { color: #57606a; font-weight: 600; }
-  /* Mobile: stack publication image above text */
-  @media (max-width: 600px) {
-    ul.ul-papers li { flex-direction: column; }
-    ul.ul-papers li .img { flex-basis: auto; width: 62%; max-width: 240px; }
-    #navbar-main .main-menu-item .nav-item .nav-link { font-size: 1rem; }
-  }
-  </style>
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Kinam Kim">
-  <link rel="manifest" href="/index.webmanifest">
-  <!-- <link rel="icon" type="image/png" href="/images/icon_hu2065e2b3e3f9ec61858579cdb7515c4d_74858_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu2065e2b3e3f9ec61858579cdb7515c4d_74858_192x192_fill_lanczos_center_2.png"> -->
-
-  <link rel="canonical" href="/">
-  <meta property="twitter:card" content="summary">
-  <meta property="og:site_name" content="Kinam Kim">
-  <meta property="og:url" content="/">
-  <meta property="og:title" content="Kinam Kim">
-  <meta property="og:description" content="M.S./PH.D Integrated"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
-  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
-  
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
-  "url": "/"
-}
-</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kinam Kim</title>
+  <meta name="description" content="Kinam Kim — Ph.D. student at KAIST AI. Research on Vision-Language-Action (VLA) models and video diffusion models.">
+  <meta property="og:title" content="Kinam Kim">
+  <meta property="og:description" content="Ph.D. student at KAIST AI. Research on Vision-Language-Action (VLA) models and video diffusion models.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kinam0252.github.io/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #2962ff;
+      --accent-tint: #eef2fe;
+      --accent-line: #c9d6fb;
+      --accent-deep: #1c46c2;
+      --ink: #2c2c2c;
+      --muted: #666;
+      --rule: #e8e8e8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      color: var(--ink);
+      background: #fff;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .icon {
+      width: 1em; height: 1em;
+      stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      vertical-align: -0.12em;
+    }
+
+    /* ── Profile header ── */
+    .profile-header { margin-bottom: 2.2rem; }
+
+    .profile-header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 2.05rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      text-align: center;
+    }
+
+    .profile-subtitle {
+      color: #555;
+      margin: 0 0 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .profile-body {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .profile-left { flex-shrink: 0; }
+
+    .profile-photo img {
+      width: 210px;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 3px 14px rgba(20, 40, 90, 0.13);
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .profile-links a {
+      color: #3d4759;
+      font-size: 0.88rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid #e2e6ef;
+      border-radius: 999px;
+      background: #fafbfe;
+      transition: border-color .15s ease, color .15s ease, background .15s ease;
+    }
+
+    .profile-links a:hover {
+      color: var(--accent-deep);
+      border-color: var(--accent-line);
+      background: var(--accent-tint);
+      text-decoration: none;
+    }
+
+    /* ── Section headings — grey rule with an accent lead-in ── */
+    h2 {
+      position: relative;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      border-bottom: 2px solid var(--rule);
+      padding-bottom: 0.3rem;
+      margin-top: 2.6rem;
+      margin-bottom: 1.1rem;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 2.6rem;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* ── Bio ── */
+    .bio { flex: 1; }
+    .bio p { margin: 0 0 0.55rem; }
+    .bio strong { font-weight: 700; color: #1b1b1b; }
+
+    /* ── News ── */
+    ul.news-list { list-style: none; padding-left: 0; margin: 0; }
+
+    ul.news-list > li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+      padding: 0.55rem 0.85rem;
+      margin-bottom: 0.5rem;
+      background: #f6f8fc;
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .news-date {
+      flex-shrink: 0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #4b5c7a;
+      background: #e6ecf7;
+      border-radius: 999px;
+      padding: 0.12rem 0.65rem;
+      white-space: nowrap;
+    }
+
+    .news-new {
+      flex-shrink: 0;
+      margin-left: auto;
+      align-self: center;
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 999px;
+      padding: 0.1rem 0.5rem;
+      box-shadow: 0 1px 3px rgba(41, 98, 255, 0.35);
+    }
+
+    /* older items sit slightly recessed so recent ones read first */
+    ul.news-list > li.past {
+      background: #f8f9fb;
+      border-left-color: #c9d0dd;
+    }
+    ul.news-list > li.past .news-date { color: #7a8395; background: #eceef3; }
+
+    /* ── CV sections ── */
+    ul.cv-list { padding-left: 1.3rem; margin: 0; }
+    ul.cv-list > li { margin-bottom: 0.9rem; }
+    ul.cv-list > li::marker { color: var(--accent); }
+    ul.cv-list > li > ul { padding-left: 1.2rem; margin-top: 0.2rem; }
+    ul.cv-list > li > ul > li {
+      margin-bottom: 0.15rem;
+      color: #555;
+      font-size: 0.93rem;
+    }
+
+    /* ── Experience ── */
+    ul.exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.6rem;
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .exp-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid #e9ecf3;
+      border-radius: 12px;
+      background: #fff;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .exp-item:hover {
+      border-color: var(--accent-line);
+      box-shadow: 0 2px 10px rgba(41, 98, 255, 0.08);
+    }
+
+    .exp-logo {
+      flex-shrink: 0;
+      width: 108px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .exp-logo img { width: 100%; height: auto; display: block; }
+
+    .exp-text { flex: 1; min-width: 0; }
+    .exp-company { font-weight: 700; font-size: 0.97rem; line-height: 1.3; color: #111; }
+    .exp-role { font-size: 0.87rem; color: #555; margin-top: 2px; }
+    .exp-period { font-size: 0.82rem; color: #8a8f9a; margin-top: 1px; }
+
+    /* ── Publications ── */
+    .publications-list { margin-top: 0.5rem; }
+
+    .pub-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 1.1rem 0.7rem;
+      border-radius: 12px;
+      transition: background .15s ease;
+    }
+
+    .pub-item:hover { background: #f6f8fc; }
+    .pub-item + .pub-item { border-top: 1px solid #eceef2; }
+
+    .pub-teaser {
+      flex: 0 0 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pub-teaser img, .pub-teaser video {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .pub-links {
+      margin-top: 10px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pub-links a { color: #6b7280; display: inline-flex; }
+    .pub-links a:hover { color: var(--accent); }
+    .pub-links .icon { width: 20px; height: 20px; }
+
+    .pub-meta { flex: 1; min-width: 0; }
+
+    .pub-meta h3 {
+      margin: 0 0 5px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -0.005em;
+    }
+
+    .pub-meta .author {
+      font-size: 0.9rem;
+      color: #3f4451;
+      margin-bottom: 6px;
+    }
+
+    /* own name — bold with a soft accent underline (echoes the old <u> styling) */
+    .me {
+      font-weight: 700;
+      color: #16181d;
+      box-shadow: inset 0 -2px 0 rgba(41, 98, 255, 0.35);
+    }
+
+    .eq { color: #8a8f9a; font-size: 0.85em; }
+
+    /* venue chips — conference accented, preprint neutral */
+    .venue-tag {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.1rem 0.55rem;
+      border-radius: 6px;
+      line-height: 1.5;
+      color: var(--accent-deep);
+      background: var(--accent-tint);
+      border: 1px solid var(--accent-line);
+    }
+
+    .venue-tag .yr { color: #6b7fbe; font-weight: 600; }
+
+    .venue-tag.arxiv {
+      color: #1f2328;
+      background: #f6f8fa;
+      border-color: #d0d7de;
+    }
+
+    .venue-tag.arxiv .yr { color: #57606a; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      ul.exp-grid { grid-template-columns: 1fr; }
+      .profile-body { flex-direction: column; }
+      .profile-left { width: 100%; }
+      .profile-photo img { width: 100%; }
+      .pub-item { flex-direction: column; padding: 1.1rem 0; }
+      .pub-teaser { width: 100%; flex: none; }
+      ul.news-list > li { flex-direction: column; gap: 0.25rem; align-items: flex-start; }
+    }
+  </style>
 </head>
+<body>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+<!-- Icon sprite (Feather, MIT) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+  </symbol>
+  <symbol id="i-scholar" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="7"/>
+    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+  </symbol>
+  <symbol id="i-github" viewBox="0 0 24 24">
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  </symbol>
+  <symbol id="i-paper" viewBox="0 0 24 24">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/>
+    <polyline points="10 9 9 9 8 9"/>
+  </symbol>
+  <symbol id="i-home" viewBox="0 0 24 24">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </symbol>
+</svg>
 
-  <aside class="search-results" id="search">
-  <div class="container">
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Search</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
+<!-- Profile Header -->
+<div class="profile-header">
+  <h1>Kinam Kim</h1>
+  <p class="profile-subtitle">Ph.D. Student · KAIST AI</p>
+  <div class="profile-body">
+    <div class="profile-left">
+      <div class="profile-photo">
+        <img src="photos/web/portrait_black.jpg" alt="Kinam Kim" />
       </div>
-
-      <div id="search-box">
-        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
-      </div>
-
-    </section>
-    <section class="section-search-results">
-
-      <div id="search-hits">
-      </div>
-
-    </section>
-  </div>
-</aside>
-
-
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container">
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Kinam Kim</a>
     </div>
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Kinam Kim</a>
-    </div>
-
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content"> 
-      <ul class="navbar-nav d-md-inline-flex">
-        <li class="nav-item">
-          <a class="nav-link " href="/#about" data-target="#about"><span>Home</span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#news" data-target="#news"><span>News</span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#papers" data-target="#papers"><span>Publications</span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#work-experience" data-target="#work-experience"><span>Work Experience</span></a>
-        </li>
-
-
-      </ul>
-    </div>
-
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-      
-      <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-      </li>
-
-    </ul>
-
-  </div>
-</nav>
-
-
-<span class="js-widget-page d-none"></span>
-
-  <section id="about" class="home-section wg-about   " style="padding: 30px 0 20px 0;" >
-    <div class="container">
-
-<div class="row">
-  <div class="col-12 col-lg-4">
-    <div id="profile">
-      <img class="avatar avatar-circle" src="/authors/admin/owner.jpg" alt="Avatar">
-      <div class="portrait-title">
-        <h2>Kinam Kim</h2>
-        <h3>M.S./PH.D Integrated Student</h3>
-        
-        <h3>
-          <a href="https://gsai.kaist.ac.kr/" target="_blank" rel="noopener">
-          <span>Artificial Intelligence, KAIST</span>
-          </a>
-        </h3>
-      </div>
-
-      
-      <td>
-      <br>
-      
-      <a href="https://scholar.google.com/citations?hl=ko&user=Y3VjmlkAAAAJ&view_op=list_works&gmla=AH8HC4xRS9ffxSdmE_uJ05eUIjd3hxFkDaoTzdZWPSa9AvV4z4XvgXAJxrcpUbNNaGlqpBMvgX4jLQMvN5dH-LOZreMaNtnC3X9Y2KsAc1DHg1UCwDE18JzqXw"><b>Google Scholar</b></a>
-        | <a href="https://github.com/kinam0252"><b>Github</b></a>
-        | <a href="/cv/kinam_kim_cv.pdf"><b>CV</b></a>
-      <br>
-      <br>
-      </td>
-     <!--  <ul class="network-icon" aria-hidden="true">    
-        <li>
-          <a href="https://scholar.google.com/citations?user=vWkHKrMAAAAJ&hl=ko" target="_blank" rel="noopener">
-            <i class="ai ai-google-scholar big-icon"></i>x
-          </a>
-        </li>  
-
-        <li>
-          <a href="https://github.com/leejesse" target="_blank" rel="noopener">
-            <i class="fab fa-github big-icon"></i>
-          </a>
-        </li>
-
-      </ul> -->
-    </div>
-  </div>
-  <div class="col-12 col-lg-8">
-
-    
-<br>
-<p>I'm a M.S./PH.D Integrated student at <a href="https://gsai.kaist.ac.kr/" target="_blank" rel="noopener">Kim Jaechul Graduate School of AI, KAIST</a>, advised by professor <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>.</p>
-
-
-<p>I am deeply interested in AI research, particularly in <b>Vision-Language-Action (VLA) models</b> and <b>Video Diffusion Models</b>. With experience in Robotics and Generative Video Models, I aim to contribute to the advancement of real-world applicability through innovative AI technologies.</p>
-
-    <div class="row">
-
-      <div class="col-md-6">
-        <h3>Contact</h3>
-        <ul class="ul-contact fa-ul">
-          <li>          
-            <i class="fa-li fas fa-envelope"></i>
-            <div class="description">
-              <p class="course">kinamplify [at] kaist.ac.kr</p>
-            </div>
-          </li>
-          <!-- <li>
-            <i class="fa-li fas fa-phone-alt"></i>
-            <div class="description">
-              <p class="course">(&#43;82)-42-350-3579</p>
-            </div>
-          </li>  -->
-        </ul>
-
-        <div id="work-experience">
-        <h3 style="margin-top: 1.2rem;">Work Experience</h3>
-        <ul class="ul-edu fa-ul">
-          <li>
-            <i class="fa-li fas fa-briefcase"></i>
-            <div class="description">
-              <p class="course">NVIDIA <span class="role">(Research&nbsp;Intern)</span></p>
-              <p class="time">Starting Jul. 2026</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-li fas fa-briefcase"></i>
-            <div class="description">
-              <p class="course">Microsoft&nbsp;Research&nbsp;Asia <span class="role">(Research&nbsp;Intern)</span></p>
-              <p class="institution">Tokyo, Japan</p>
-              <p class="time">Feb. 2026 - Jul. 2026</p>
-            </div>
-          </li>
-        </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <h3>Education</h3>
-        <ul class="ul-edu fa-ul">
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">M.S. Student/PH.D Integrated in Artificial Intelligence</p>
-              <p class="time">Mar. 2025 - Present</p>
-              <p class="institution school">Korea Advanced Institute of Science and Technology (KAIST)</p>
-              <p class="institution">Advisor: Prof. Jaegul Choo</p>
-            </div>
-          </li>
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">B.S. in School of Computing</p>
-              <p class="time">Mar. 2019 - 2024</p>
-              <p class="institution school">Korea Advanced Institute of Science and Technology (KAIST)</p>
-            </div>
-          </li>
-
-        </ul>
+    <div class="bio">
+      <p>I am a Ph.D. student at <a href="https://gsai.kaist.ac.kr/" target="_blank" rel="noopener">KAIST AI</a>, advised by Prof. <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener">Jaegul Choo</a>. I am currently a research intern at Microsoft Research Asia, and will join NVIDIA as a research intern in July 2026.</p>
+      <p>My research interests lie at the intersection of <strong>Vision-Language-Action (VLA) models</strong> and <strong>video diffusion models</strong>, focusing on turning generative video priors into controllable, real-world robot behavior.</p>
+      <p>If you have any questions or suggestions, please feel free to contact me via email (<a href="mailto:kinamplify@kaist.ac.kr">kinamplify@kaist.ac.kr</a>)!</p>
+      <div class="profile-links">
+        <a href="mailto:kinamplify@kaist.ac.kr"><svg class="icon"><use href="#i-mail"/></svg> kinamplify@kaist.ac.kr</a>
+        <a href="https://scholar.google.com/citations?hl=ko&amp;user=Y3VjmlkAAAAJ" target="_blank" rel="noopener"><svg class="icon"><use href="#i-scholar"/></svg> Scholar</a>
+        <a href="https://github.com/kinam0252" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg> GitHub</a>
+        <a href="cv/kinam_kim_cv.pdf" target="_blank" rel="noopener"><svg class="icon"><use href="#i-paper"/></svg> CV</a>
       </div>
     </div>
   </div>
 </div>
 
-    </div>
-  </section>
+<h2 id="news">News</h2>
 
-
-  <section id="news" class="home-section wg-blank   " style="padding: 20px 0 20px 0;" >
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>News</h1>
-          <ul class="news-list">
-            <li>
-              <span class="news-date">Feb 2026</span>
-              <span><span class="news-ico">🎉</span> <b>EgoX</b> accepted to <span class="venue-badge">CVPR 2026</span>.</span>
-            </li>
-            <li>
-              <span class="news-date">Jan 2026</span>
-              <span><span class="news-ico">🎉</span> <b>ACG</b> accepted to <span class="venue-badge">ICRA 2026</span>.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <section id="papers" class="home-section wg-papers   " style="padding: 20px 0 20px 0;" >
-    <div class="container">
-      
-<div class="row">
-  
-    <div class="col-lg-12">
-      <h1>Publications</h1>
-    </div>
-    <div class="row">
-        <ul class="ul-papers">
-
-        <li>
-            <div class="img">
-              <img src="/papers/images/object_centric_residual_rl_teaser.png" class="img-responsive" alt="">
-            </div>
-          <div class="description">
-            <p class="title">Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement</p>
-            <p class="authors"><u>Kinam Kim</u>, Namiko Saito, Heecheol Kim, Katsushi Ikeuchi, Jaegul Choo, Yasuyuki Matsushita</p>
-            <p class="venue"><span class="venue-tag arxiv">arXiv <span class="yr">2026</span></span></p>
-
-            <p class="resources">
-              [
-                <a href="https://arxiv.org/abs/2606.18953">paper</a>
-              ]
-              [
-                <a href="https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/">project page</a>
-              ]
-            </p>
-          </div>
-        </li>
-
-        <li>
-            <div class="img">
-              <img src="/papers/images/EgoX_teaser.png" class="img-responsive" alt="">
-            </div>
-          <div class="description">
-            <p class="title">EgoX: Egocentric Video Generation from a Single Exocentric Video</p>
-            <p class="authors">Taewoong Kang*, <u>Kinam Kim</u>*, Dohyeon Kim*, Jaegul Choo (* equal contribution)</p>
-            <p class="venue"><span class="venue-tag cvpr">CVPR <span class="yr">2026</span></span></p>
-
-            <p class="resources">
-              [
-                <a href="/papers/pdf/EgoX_submission.pdf">paper</a>
-              ]
-              [
-                <a href="">project page</a>
-              ]
-            </p>
-          </div>
-        </li>
-
-        <li>
-            <div class="img">
-              <img src="/papers/images/icra_2025_acg.png" class="img-responsive" alt="">
-            </div>
-          <div class="description">
-            <p class="title">ACG: Action Coherence Guidance for Flow-based VLA models</p>
-            <p class="authors">Minho Park*, <u>Kinam Kim</u>*, Junha Hyung, Hyojin Jang, Hoiyeong Jin, Jooyeol Yun, Hojoon Lee, Jaegul Choo (* equal contribution)</p>
-            <p class="venue"><span class="venue-tag icra">ICRA <span class="yr">2026</span></span></p>
-
-            <p class="resources">
-              [
-                <a href="/papers/pdf/ICRA_2026_VLA_Guidance.pdf">paper</a>
-              ]
-              [
-                <a href="">project page</a>
-              ]
-            </p>
-          </div>
-        </li>
-
-        <li>
-            <div class="img">
-              <video autoplay loop muted playsinline class="img-responsive">
-                <source src="/papers/videos/ticft_teaser.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          <div class="description">
-            <p class="title">Temporal In-Context Fine-Tuning for Versatile Control of Video Diffusion Models</p>
-            <p class="authors"><u>Kinam Kim</u>*, Junha Hyung*, Jaegul Choo (* equal contribution)</p>
-            <p class="venue"><span class="venue-tag neurips">NeurIPS <span class="yr">2025</span></span></p>
-
-            <p class="resources">
-              [
-                <a href="https://arxiv.org/pdf/2506.00996">paper</a>
-              ]
-              [
-                <a href="https://kinam0252.github.io/TIC-FT/">project page</a>
-              ]
-            </p>
-          </div>
-        </li>
-
-        <li>
-            <div class="img">
-              <video autoplay loop muted playsinline class="img-responsive">
-                <source src="/papers/videos/stg.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          <div class="description">
-            <p class="title">Spatiotemporal Skip Guidance for Enhanced Video Diffusion Sampling</p>
-            <p class="authors"> Junha Hyung*, <u>Kinam Kim</u>*, Susung Hong, Min-Jung Kim, Jaegul Choo (* equal contribution)</p>
-            <p class="venue"><span class="venue-tag cvpr">CVPR <span class="yr">2025</span></span></p>
-
-            <p class="resources">
-              [
-                <a href="https://arxiv.org/abs/2411.18664">paper</a>
-              ]
-              [
-                <a href="https://junhahyung.github.io/STGuidance/">project page</a>
-              ]
-            </p>
-          </div>
-        </li>
-
-        <li>
-            <div class="img">
-              <img src="/papers/images/2025_crepa.png" class="img-responsive" alt="">
-            </div>
-          <div class="description">
-            <p class="title">Cross-Frame Representation Alignment for Fine-Tuning Video Diffusion Models</p>
-            <p class="authors">Sungwon Hwang*, Hyojin Jang*, <u>Kinam Kim</u>, Minho Park, Jaegul Choo (* equal contribution)</p>
-            <p class="venue"><span class="venue-tag arxiv">arXiv <span class="yr">2025</span></span></p>
-
-            <p class="resources">
-              [
-                <a href="https://arxiv.org/abs/2506.09229">paper</a>
-              ]
-              [
-                <a href="https://crepavideo.github.io/">project page</a>
-              ]
-            </p>
-          </div>
-        </li>
-
-        <li>
-            <div class="img">
-              <img src="/papers/images/2024_eg3d.png" class="img-responsive" alt="">
-            </div>
-          <div class="description">
-            <p class="title">Overcoming Camera-Facing Gaze Bias in EG3D Scene Generation</p>
-            <p class="authors"><u>Kinam Kim</u>, Juhyun Lee, Youngdo Lee</p>
-            <p class="venue"><span class="venue-tag arxiv">arXiv <span class="yr">2023</span></span></p>
-
-            <p class="resources">
-              [
-                <a href="/papers/pdf/gaze_corrected_eg3d.pdf">paper</a>
-              ]
-              [
-                <span>project page</span>
-              ]
-            </p>
-          </div>
-        </li>
-
-        </ul>      
-    </div>  
-</div>
-    </div>
-  </section>
-
-
-<!-- <section id="research-experience" class="home-section wg-blank   " style="padding: 20px 0 20px 0;" >
-    <div class="container">
-
-<div class="row">  
-    <div class="col-lg-12">
-      <h1>Research Experience</h1>      
-      
-<ul>
-<li>Applied various Flow-Matching and Diffusion techniques to state-of-the-art VLA models (e.g., GR00T, Pi0, SmolVLA).</li>
-<li>Conducted training and evaluation across multiple robotics benchmarks including Robocasa, DexMimicGen, and SO101.</li>
-<li>Implemented and customized training and inference pipelines for Video Diffusion Models (e.g., Wan2.1, CogVideoX, Mochi) to support new functionalities.</li>
-<li>Contributed Spatio-Temporal Guidance (CVPR 2025) implementations to LTX-Video and Hugging Face Diffusers.</li>
+<ul class="news-list">
+  <li>
+    <span class="news-date">Feb 2026</span>
+    <span>🎉 <strong>EgoX</strong> accepted to <strong style="color:var(--accent)">CVPR 2026</strong>.</span>
+    <span class="news-new">New</span>
+  </li>
+  <li>
+    <span class="news-date">Jan 2026</span>
+    <span>🎉 <strong>ACG</strong> accepted to <strong style="color:var(--accent)">ICRA 2026</strong>.</span>
+    <span class="news-new">New</span>
+  </li>
+  <li class="past">
+    <span class="news-date">Sep 2025</span>
+    <span>🎉 <strong>TIC-FT</strong> accepted to <strong style="color:var(--accent)">NeurIPS 2025</strong>.</span>
+  </li>
+  <li class="past">
+    <span class="news-date">Feb 2025</span>
+    <span>🎉 <strong>STG</strong> accepted to <strong style="color:var(--accent)">CVPR 2025</strong>.</span>
+  </li>
 </ul>
+
+<h2 id="experience">Experience</h2>
+
+<ul class="exp-grid">
+  <li class="exp-item">
+    <div class="exp-logo">
+      <img src="images/logos/nvidia.svg" alt="NVIDIA" />
     </div>
+    <div class="exp-text">
+      <div class="exp-company">NVIDIA</div>
+      <div class="exp-role">Research Intern</div>
+      <div class="exp-period">2026.07 – Now</div>
+    </div>
+  </li>
+  <li class="exp-item">
+    <div class="exp-logo">
+      <img src="images/logos/microsoft.svg" alt="Microsoft" />
+    </div>
+    <div class="exp-text">
+      <div class="exp-company">Microsoft Research Asia</div>
+      <div class="exp-role">Research Intern</div>
+      <div class="exp-period">2026.02 – 2026.07</div>
+    </div>
+  </li>
+</ul>
+
+<h2 id="publications">Publications</h2>
+
+<div class="publications-list">
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <img src="papers/images/object_centric_residual_rl_teaser.png" alt="teaser: Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement" />
+      <div class="pub-links">
+        <a href="https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://arxiv.org/abs/2606.18953" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement</h3>
+      <div class="author"><span class="me">Kinam Kim</span>, Namiko Saito, Heecheol Kim, Katsushi Ikeuchi, Jaegul Choo, Yasuyuki Matsushita</div>
+      <span class="venue-tag arxiv">arXiv <span class="yr">2026</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <img src="papers/images/EgoX_teaser.png" alt="teaser: EgoX" />
+      <div class="pub-links">
+        <a href="https://keh0t0.github.io/EgoX/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://github.com/DAVIAN-Robotics/EgoX" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
+        <a href="https://arxiv.org/abs/2512.08269" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>EgoX: Egocentric Video Generation from a Single Exocentric Video</h3>
+      <div class="author">Taewoong Kang*, <span class="me">Kinam Kim</span>*, Dohyeon Kim*, Minho Park, Junha Hyung, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag">CVPR <span class="yr">2026</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <img src="papers/images/icra_2025_acg.png" alt="teaser: ACG" />
+      <div class="pub-links">
+        <a href="https://davian-robotics.github.io/ACG/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://github.com/DAVIAN-Robotics/ACG" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
+        <a href="https://arxiv.org/abs/2510.22201" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>ACG: Action Coherence Guidance for Flow-based VLA Models</h3>
+      <div class="author">Minho Park*, <span class="me">Kinam Kim</span>*, Junha Hyung, Hyojin Jang, Hoiyeong Jin, Jooyeol Yun, Hojoon Lee, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag">ICRA <span class="yr">2026</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <video autoplay loop muted playsinline>
+        <source src="papers/videos/ticft_teaser.mp4" type="video/mp4">
+      </video>
+      <div class="pub-links">
+        <a href="https://kinam0252.github.io/TIC-FT/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://github.com/kinam0252/TIC-FT" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
+        <a href="https://arxiv.org/abs/2506.00996" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>Temporal In-Context Fine-Tuning for Versatile Control of Video Diffusion Models</h3>
+      <div class="author"><span class="me">Kinam Kim</span>*, Junha Hyung*, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag">NeurIPS <span class="yr">2025</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <video autoplay loop muted playsinline>
+        <source src="papers/videos/stg.mp4" type="video/mp4">
+      </video>
+      <div class="pub-links">
+        <a href="https://junhahyung.github.io/STGuidance/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://github.com/junhahyung/STGuidance" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
+        <a href="https://arxiv.org/abs/2411.18664" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>Spatiotemporal Skip Guidance for Enhanced Video Diffusion Sampling</h3>
+      <div class="author">Junha Hyung*, <span class="me">Kinam Kim</span>*, Susung Hong, Min-Jung Kim, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag">CVPR <span class="yr">2025</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <img src="papers/images/2025_crepa.png" alt="teaser: CREPA" />
+      <div class="pub-links">
+        <a href="https://crepavideo.github.io/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://arxiv.org/abs/2506.09229" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>Cross-Frame Representation Alignment for Fine-Tuning Video Diffusion Models</h3>
+      <div class="author">Sungwon Hwang*, Hyojin Jang*, <span class="me">Kinam Kim</span>, Minho Park, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag arxiv">arXiv <span class="yr">2025</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <img src="papers/images/2024_eg3d.png" alt="teaser: Overcoming Camera-Facing Gaze Bias in EG3D Scene Generation" />
+      <div class="pub-links">
+        <a href="papers/pdf/gaze_corrected_eg3d.pdf" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>Overcoming Camera-Facing Gaze Bias in EG3D Scene Generation</h3>
+      <div class="author"><span class="me">Kinam Kim</span>, Juhyun Lee, Youngdo Lee</div>
+      <span class="venue-tag arxiv">arXiv <span class="yr">2023</span></span>
+    </div>
+  </div>
+
 </div>
-    </div>
-  </section> -->
 
+<h2 id="education">Education</h2>
 
-
-
-<!--
-<section id="activities" class="home-section wg-blank   " style="padding: 20px 0 20px 0;" >
-    <div class="container">
-
-<div class="row">  
-    <div class="col-lg-12">
-      <h1>Academic Activities</h1>      
-      <h2 id="reviewer">Reviewer</h2>
-<ul>
-<li>ICCV 2023</li>                       
-<li>CVPR 2022, 2023</li>
-<li>ECCV 2022</li>
-
-</ul>               
-    
-      <h2 id="Talks">Talks</h2>
-<ul>
-<li>2022 KAIA & NAVER Autumn Joint Academic Conference</li>
+<ul class="cv-list">
+  <li>
+    Ph.D. Student @ Korea Advanced Institute of Science &amp; Technology (KAIST)
     <ul>
-    <li>Topic: Cross-domain Neural Talking Head Synthesis</li>
+      <li>KAIST AI (Advisor: Prof. Jaegul Choo)</li>
+      <li>2025.02 – Present</li>
     </ul>
-
-
+  </li>
+  <li>
+    B.S. at Korea Advanced Institute of Science &amp; Technology (KAIST)
+    <ul>
+      <li>School of Computing</li>
+      <li>2019.03 – 2024.02</li>
+    </ul>
+  </li>
 </ul>
-    </div>
-</div>
-    </div>
-  </section>
-  //-->
-
-  
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script> 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
-    
-
-    <script>const code_highlighting = false;</script>
-    <script>const isSiteThemeDark = false;</script>
-    
-    <script>
-      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
-      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
-      const content_type = {
-        'post': "Posts",
-        'project': "Projects",
-        'publication' : "Publications",
-        'talk' : "Talks"
-        };
-    </script>
-
-    <script id="search-hit-fuse-template" type="text/x-template">
-      <div class="search-hit" id="summary-{{key}}">
-      <div class="search-hit-content">
-        <div class="search-hit-name">
-          <a href="{{relpermalink}}">{{title}}</a>
-          <div class="article-metadata search-hit-type">{{type}}</div>
-          <p class="search-hit-description">{{snippet}}</p>
-        </div>
-      </div>
-      </div>
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-
-    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
-
-
-  
-  <div class="container">
-    <footer class="site-footer">
-  
-
-  <p class="powered-by">
-    
-    .
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" class="back-to-top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
-</footer>
-
-  </div>
-  
-
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 </body>
 </html>
