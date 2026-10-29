@@ -246,6 +246,14 @@
     /* ── Publications ── */
     .publications-list { margin-top: 0.5rem; }
 
+    .pub-group {
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--muted);
+      margin: 2rem 0 0.9rem; padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .pub-group:first-child { margin-top: 0.2rem; }
+
     .pub-item {
       display: flex;
       gap: 20px;
@@ -384,7 +392,7 @@
     </div>
     <div class="bio">
       <p>I am a Ph.D. student at <a href="https://gsai.kaist.ac.kr/" target="_blank" rel="noopener">KAIST AI</a>, advised by Prof. <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener">Jaegul Choo</a>. I am currently a research intern at NVIDIA, previously at Microsoft Research Asia.</p>
-      <p>My research is on <strong>robot foundation models</strong>: <strong>Vision-Language-Action (VLA) models</strong> and <strong>world models</strong> built on video generative priors. I work on what it takes to make them run on real robots, from reinforcement learning and zero-shot sim-to-real transfer to generating dexterous manipulation data at scale without teleoperation.</p>
+      <p>My research is on <strong>world models for Physical AI</strong>: making <strong>video generative models</strong> into simulators of the physical world, and turning those simulators into robot behavior. I work on sampling, conditioning and spatiotemporal consistency on the generative side, and on <strong>Vision-Language-Action (VLA)</strong> policies, reinforcement learning and zero-shot sim-to-real on the robot side.</p>
       <p>If you have any questions or suggestions, please feel free to contact me via email (<a href="mailto:kinamplify@kaist.ac.kr">kinamplify@kaist.ac.kr</a>)!</p>
       <div class="profile-links">
         <a href="mailto:kinamplify@kaist.ac.kr"><svg class="icon"><use href="#i-mail"/></svg> kinamplify@kaist.ac.kr</a>
@@ -456,6 +464,105 @@
 
 <div class="publications-list">
 
+  <div class="pub-group">World Models and Video Generation</div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <video autoplay loop muted playsinline>
+        <source src="papers/videos/ticft_teaser.mp4" type="video/mp4">
+      </video>
+      <div class="pub-links">
+        <a href="https://kinam0252.github.io/TIC-FT/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://github.com/kinam0252/TIC-FT" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
+        <a href="https://arxiv.org/abs/2506.00996" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>Temporal In-Context Fine-Tuning for Versatile Control of Video Diffusion Models</h3>
+      <div class="author"><span class="me">Kinam Kim</span>*, Junha Hyung*, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag">NeurIPS <span class="yr">2025</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <img src="papers/images/EgoX_teaser.png" alt="teaser: EgoX" />
+      <div class="pub-links">
+        <a href="https://keh0t0.github.io/EgoX/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://github.com/DAVIAN-Robotics/EgoX" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
+        <a href="https://arxiv.org/abs/2512.08269" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>EgoX: Egocentric Video Generation from a Single Exocentric Video</h3>
+      <div class="author">Taewoong Kang*, <span class="me">Kinam Kim</span>*, Dohyeon Kim*, Minho Park, Junha Hyung, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag">CVPR <span class="yr">2026</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <video autoplay loop muted playsinline>
+        <source src="papers/videos/stg.mp4" type="video/mp4">
+      </video>
+      <div class="pub-links">
+        <a href="https://junhahyung.github.io/STGuidance/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://github.com/junhahyung/STGuidance" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
+        <a href="https://arxiv.org/abs/2411.18664" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>Spatiotemporal Skip Guidance for Enhanced Video Diffusion Sampling</h3>
+      <div class="author">Junha Hyung*, <span class="me">Kinam Kim</span>*, Susung Hong, Min-Jung Kim, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag">CVPR <span class="yr">2025</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <img src="papers/images/omnishowcase_teaser.png" alt="teaser: OmniShowcase" />
+      <div class="pub-links">
+        <a href="https://arxiv.org/abs/2610.35684" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>OmniShowcase: Omnidirectional Subject-Consistent Video Generation from Multi-View Images</h3>
+      <div class="author">Junyeong Ahn*, Geonwoo Kim*, <span class="me">Kinam Kim*</span>, Gihwi Kim, Hoonjin Jung, Hyojin Jang, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag">Under Review <span class="yr">2026</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <img src="papers/images/2025_crepa.png" alt="teaser: CREPA" />
+      <div class="pub-links">
+        <a href="https://crepavideo.github.io/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
+        <a href="https://arxiv.org/abs/2506.09229" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>Cross-Frame Representation Alignment for Fine-Tuning Video Diffusion Models</h3>
+      <div class="author">Sungwon Hwang*, Hyojin Jang*, <span class="me">Kinam Kim</span>, Minho Park, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag arxiv">arXiv <span class="yr">2025</span></span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-teaser">
+      <img src="papers/images/2024_eg3d.png" alt="teaser: Overcoming Camera-Facing Gaze Bias in EG3D Scene Generation" />
+      <div class="pub-links">
+        <a href="papers/pdf/gaze_corrected_eg3d.pdf" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+      </div>
+    </div>
+    <div class="pub-meta">
+      <h3>Overcoming Camera-Facing Gaze Bias in EG3D Scene Generation</h3>
+      <div class="author"><span class="me">Kinam Kim</span>, Juhyun Lee, Youngdo Lee</div>
+      <span class="venue-tag arxiv">arXiv <span class="yr">2023</span></span>
+    </div>
+  </div>
+
+  <div class="pub-group">Robot Learning</div>
+
   <div class="pub-item">
     <div class="pub-teaser">
       <img src="papers/images/object_centric_residual_rl_teaser.png" alt="teaser: Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement" />
@@ -491,22 +598,6 @@
 
   <div class="pub-item">
     <div class="pub-teaser">
-      <img src="papers/images/EgoX_teaser.png" alt="teaser: EgoX" />
-      <div class="pub-links">
-        <a href="https://keh0t0.github.io/EgoX/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
-        <a href="https://github.com/DAVIAN-Robotics/EgoX" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
-        <a href="https://arxiv.org/abs/2512.08269" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
-      </div>
-    </div>
-    <div class="pub-meta">
-      <h3>EgoX: Egocentric Video Generation from a Single Exocentric Video</h3>
-      <div class="author">Taewoong Kang*, <span class="me">Kinam Kim</span>*, Dohyeon Kim*, Minho Park, Junha Hyung, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
-      <span class="venue-tag">CVPR <span class="yr">2026</span></span>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <div class="pub-teaser">
       <img src="papers/images/icra_2025_acg.png" alt="teaser: ACG" />
       <div class="pub-links">
         <a href="https://davian-robotics.github.io/ACG/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
@@ -523,66 +614,15 @@
 
   <div class="pub-item">
     <div class="pub-teaser">
-      <video autoplay loop muted playsinline>
-        <source src="papers/videos/ticft_teaser.mp4" type="video/mp4">
-      </video>
+      <img src="papers/images/discodemo_teaser.png" alt="teaser: DiscoDemo" />
       <div class="pub-links">
-        <a href="https://kinam0252.github.io/TIC-FT/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
-        <a href="https://github.com/kinam0252/TIC-FT" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
-        <a href="https://arxiv.org/abs/2506.00996" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
+        <a href="https://arxiv.org/abs/2610.32093" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
       </div>
     </div>
     <div class="pub-meta">
-      <h3>Temporal In-Context Fine-Tuning for Versatile Control of Video Diffusion Models</h3>
-      <div class="author"><span class="me">Kinam Kim</span>*, Junha Hyung*, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
-      <span class="venue-tag">NeurIPS <span class="yr">2025</span></span>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <div class="pub-teaser">
-      <video autoplay loop muted playsinline>
-        <source src="papers/videos/stg.mp4" type="video/mp4">
-      </video>
-      <div class="pub-links">
-        <a href="https://junhahyung.github.io/STGuidance/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
-        <a href="https://github.com/junhahyung/STGuidance" target="_blank" rel="noopener" title="Code"><svg class="icon"><use href="#i-github"/></svg></a>
-        <a href="https://arxiv.org/abs/2411.18664" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
-      </div>
-    </div>
-    <div class="pub-meta">
-      <h3>Spatiotemporal Skip Guidance for Enhanced Video Diffusion Sampling</h3>
-      <div class="author">Junha Hyung*, <span class="me">Kinam Kim</span>*, Susung Hong, Min-Jung Kim, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
-      <span class="venue-tag">CVPR <span class="yr">2025</span></span>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <div class="pub-teaser">
-      <img src="papers/images/2025_crepa.png" alt="teaser: CREPA" />
-      <div class="pub-links">
-        <a href="https://crepavideo.github.io/" target="_blank" rel="noopener" title="Project page"><svg class="icon"><use href="#i-home"/></svg></a>
-        <a href="https://arxiv.org/abs/2506.09229" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
-      </div>
-    </div>
-    <div class="pub-meta">
-      <h3>Cross-Frame Representation Alignment for Fine-Tuning Video Diffusion Models</h3>
-      <div class="author">Sungwon Hwang*, Hyojin Jang*, <span class="me">Kinam Kim</span>, Minho Park, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
-      <span class="venue-tag arxiv">arXiv <span class="yr">2025</span></span>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <div class="pub-teaser">
-      <img src="papers/images/2024_eg3d.png" alt="teaser: Overcoming Camera-Facing Gaze Bias in EG3D Scene Generation" />
-      <div class="pub-links">
-        <a href="papers/pdf/gaze_corrected_eg3d.pdf" target="_blank" rel="noopener" title="Paper"><svg class="icon"><use href="#i-paper"/></svg></a>
-      </div>
-    </div>
-    <div class="pub-meta">
-      <h3>Overcoming Camera-Facing Gaze Bias in EG3D Scene Generation</h3>
-      <div class="author"><span class="me">Kinam Kim</span>, Juhyun Lee, Youngdo Lee</div>
-      <span class="venue-tag arxiv">arXiv <span class="yr">2023</span></span>
+      <h3>DiscoDemo: Discovering Efficient and Diverse Robot Demonstrations for Imitation Learning</h3>
+      <div class="author">Minho Park*, <span class="me">Kinam Kim*</span>, Donghu Kim, Byungkun Lee, Dongyoon Hwang, Yongjae Shin, Junha Hyung, Hojoon Lee, Jaegul Choo <span class="eq">(* equal contribution)</span></div>
+      <span class="venue-tag">Under Review <span class="yr">2026</span></span>
     </div>
   </div>
 
